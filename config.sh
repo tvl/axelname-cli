@@ -4,6 +4,16 @@ URL="https://my.axelname.ru/rest"
 NS1="ns1.domainparking.ru"
 NS2="ns2.domainparking.ru"
 
+function domain {
+    if [[ ! "$1" == *.ru ]]
+    then
+        echo "$1.ru"
+    else
+        echo $1
+    fi
+
+}
+
 FILE="account.sh"
 
 if [ ! -f $FILE ]; then

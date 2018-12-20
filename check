@@ -5,7 +5,7 @@ source account.sh
 
 CMD="domain_check"
 
-DOMAIN=$1
+DOMAIN=$(domain $1)
 
 echo "Domain: $DOMAIN"
 http "${URL}/${CMD}/?nichdl=${NIC}&token=${API_KEY}&domain=${DOMAIN}"
