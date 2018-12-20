@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source config.sh
+source account.sh
+
+CMD="domain_reg"
+
+DOMAIN=$1
+
+echo "Domain: $DOMAIN"
+http "${URL}/${CMD}/?nichdl=${NIC}&token=${API_KEY}&domain=${DOMAIN}&ns1=${NS1}&ns2=${NS2}&nop"
+
