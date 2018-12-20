@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source config.sh
+source account.sh
+
+CMD="domain_prolong"
+
+DOMAIN=$1
+
+echo "Domain: $DOMAIN"
+http "${URL}/${CMD}/?nichdl=${NIC}&token=${API_KEY}&domain=${DOMAIN}&nop"
+
