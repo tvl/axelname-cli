@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source config.sh
+source account.sh
+
+CMD="domains_list"
+http "${URL}/${CMD}/?nichdl=${NIC}&token=${API_KEY}"
+
+# Convert json to csv
+# jq '.list[] | join(", ")' domains.json | tr -d '"' > domains.csv
+
