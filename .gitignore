@@ -1,0 +1,10 @@
+*.csv
+*.json
+*.xlsx
+
+*.swp
+*.tmp
+
+*API*
+account.sh
+
