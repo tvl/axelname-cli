@@ -6,7 +6,18 @@ source account.sh
 CMD="domain_reg"
 
 DOMAIN=$(domain $1)
+list=""
 
-echo "Domain: $DOMAIN"
-http "${URL}/${CMD}/?nichdl=${NIC}&token=${API_KEY}&domain=${DOMAIN}&ns1=${NS1}&ns2=${NS2}&nop"
+while read line
+do
+  #echo -n "domain[]=${line}&"
+  list="${list}domain[]=${line}&"
+done < "${1:-/dev/stdin}"
+
+#echo "Domain: $DOMAIN"
+#http "${URL}/${CMD}/?nichdl=${NIC}&token=${API_KEY}&domain=${DOMAIN}&ns1=${NS1}&ns2=${NS2}&nop"
+
+http "${URL}/${CMD}/?nichdl=${NIC}&token=${API_KEY}&${list}nop=0&ns1=${NS1}&ns2=${NS2}"
+
+
 
